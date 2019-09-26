@@ -5,7 +5,7 @@ interface SpotlightProps {
   enabled: boolean
 }
 
-export default class Spotlight extends PureComponent<SpotlightProps> {
+export class Spotlight extends PureComponent<SpotlightProps> {
   static defaultProps = {
     enabled: true,
   }
