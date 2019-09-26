@@ -9,33 +9,10 @@
  */
 
 import React, { Component } from 'react'
-import { View, Alert, NativeModules, SafeAreaView, StatusBar, StyleSheet, Text } from 'react-native'
-import { Spotlight, Shadow, Button, MyLibrary } from 'react-native-library'
-import { Measurable, ArrowView } from 'react-native-arrow-view'
-const styles = StyleSheet.create({
-  h1: {
-    fontSize: 24,
-  },
-})
-const { NativeLibrary } = NativeModules
+import { Text, View } from 'react-native'
+import { Shadow, Spotlight } from 'react-native-library'
 
 export default class App extends Component {
-  componentDidMount() {
-    console.log(NativeModules)
-    console.log(NativeLibrary)
-  }
-
-  state = {
-    spotlight: {
-      x: 0,
-      y: 0,
-    },
-    text: {
-      x: 0,
-      y: 0,
-    },
-  }
-
   render() {
     return (
       <View
@@ -44,54 +21,27 @@ export default class App extends Component {
           alignItems: 'center',
           justifyContent: 'space-between',
           padding: 16,
+          backgroundColor: 'gray',
         }}>
-        <Shadow />
+        {/** Put it for enable shadow background  */}
+        <Shadow
+          color="#000" // optional: color of shadow
+          opacity={0.5} // optional: shadow opacity (0 - transparent, 1 - full colored)
+        />
 
-        <StatusBar barStyle="dark-content" />
-        <Text style={styles.h1}>react-native-library bootstrap</Text>
-
+        {/* Wrap needed component in Spotlight */}
         <Spotlight>
-          <Measurable
-            onMeasure={(x: number, y: number, width: number, height: number) => {
-              this.setState({
-                text: { x: x + width / 3, y: y + height + 5 },
-              })
-            }}>
-            <Text style={{ color: '#fff' }}>Press on the button</Text>
-          </Measurable>
+          <Text style={{ color: '#fff' }}>I am highlighted :)</Text>
         </Spotlight>
 
-        <Spotlight enabled={true}>
-          <Measurable
-            onMeasure={(x: number, y: number, width: number, height: number) => {
-              this.setState({
-                spotlight: { x: x + width / 2, y: y - 15 },
-              })
-            }}>
-            <Button
-              text="Test JS"
-              onPress={() => {
-                MyLibrary.showMessage('This text passed from app to library')
-              }}
-            />
-          </Measurable>
+        {/* Can be wrapped complicated custom components too */}
+        <Spotlight>
+          <View style={{ padding: 16, backgroundColor: 'white', borderRadius: 4 }}>
+            <Text>I am highlighted too :)</Text>
+          </View>
         </Spotlight>
 
-        <ArrowView
-          color={'#fff'}
-          dash={[3, 5]}
-          curveDelta={10}
-          from={this.state.text}
-          to={this.state.spotlight || { x: 0, y: 0 }}
-        />
-
-        <Button
-          text="Test Native getValue()"
-          onPress={async () => {
-            const result = await MyLibrary.getValue()
-            Alert.alert('Test Native getValue()', result)
-          }}
-        />
+        <Text style={{ color: '#fff' }}>I am not highlighted :(</Text>
       </View>
     )
   }

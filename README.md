@@ -1,75 +1,57 @@
-What is it
-----------
+react-native-spotlight
+-----------------------
 
-Bootstrap template for create libraries in React Native environment
+Library that helps you implement highlighting UI elements on on-boarding screen
+If you looking for library for implementing onboarding out-of-the box check [react-native-onboarding-view](https://github.com/lamantin-group/react-native-onboarding-view)
 
-How to use it
--------------
+![v1](.github/v1.png)
+
+Install
+-------
 
 Clone repository in development folder (it is created automatically)
 ```bash
-git clone https://github.com/whalemare/react-native-library.git react-native-library-name
+npm install --save react-native-spotlight
 ```
-
-Move into cloned folder
+or
 ```bash
-cd react-native-library-name
+yarn add react-native-spotlight
 ```
 
-Check that sample started correctly
-```bash
-npm run start:first
+Example
+-------
+
+```js
+import { Shadow, Spotlight } from 'react-native-spotlight'
+
+render() {
+  return (
+    <View>
+      {/** Put it in any place for enable shadow background */}
+      <Shadow
+        color="#000" // optional: color of shadow
+        opacity={0.5} // optional: shadow opacity (0 - transparent, 1 - full colored)
+      />
+
+      {/* Wrap needed component in Spotlight */}
+      <Spotlight>
+        <Text style={{ color: '#fff' }}>I am highlighted :)</Text>
+      </Spotlight>
+
+      {/* Can be wrapped complicated custom components */}
+      <Spotlight>
+        <View style={{ padding: 16, backgroundColor: 'white', borderRadius: 4 }}>
+          <Text>I am highlighted too :)</Text>
+        </View>
+      </Spotlight>
+
+      <Text style={{ color: '#fff' }}>I am not highlighted :(</Text>
+    </View>
+  )
+}
 ```
 
-Reset git repository
-```bash
-npm run git:reset
-```
-
-Update library info in `package.json` to your own
-```json
-  "name": "react-native-library", // required for correct work renaming
-  "author": "whalemare", // required for correct work renaming
-  "version": "1.0.0",
-  "description": "Library bootstrap",
-  "license": "Apache 2.0",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/whalemare/react-native-library.git"
-  }
-```
-
-If you have a question or need specific feature, feel free to [open an issue](https://github.com/lamantin-group/react-native-library/issues/new) or create pull request.
-
-Roadmap
---------
-
-Common
-- [x] TypeScript for library and example
-- [x] Properly configured example for library
-- [x] Autocomplete is working
-- [x] ESLint and Prettier
-- [x] .npmignore publish template
-- [x] Automatically generating typings when publish
-- [x] Hot library replacement in development 
-- [x] MIT License template
-- [x] VSCode configuration for run debugger
-- [x] Bug report template in `.github/ISSUE_TEMPLATE` folder
-- [ ] Hot reloading for example (working only live reload)
-- [ ] CI for checking build status
-
-Android features
-- [x] Android min api 16
-- [x] Android target api 29
-- [x] Kotlin 1.3.50
-- [x] Gradle 5.6.2
-- [x] Added most popular library-source repositories (jcenter, google, jitpack)
-- [ ] Fix local.properties to work on independent environment
-- [ ] Extensions mapper to language types from ReactNative types
-
-iOS features
-- [x] iOS library module support
-- [x] Swift support for library ios module
+If you have a question or need specific feature, feel free to [open an issue](https://github.com/lamantin-group/react-native-spotlight/issues/new) or create pull request.
 
 ---
 

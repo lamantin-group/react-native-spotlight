@@ -4,6 +4,9 @@ npm-debug.log
 tmp
 dist
 
+android
+ios
+
 node_modules
 Pods
 

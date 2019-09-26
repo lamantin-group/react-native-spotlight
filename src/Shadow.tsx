@@ -1,8 +1,11 @@
 import React, { PureComponent } from 'react'
 import { View, ViewStyle, Dimensions } from 'react-native'
+import { Color } from 'csstype'
 
 interface ShadowProps {
   style?: ViewStyle
+  opacity?: number
+  color?: Color
 }
 
 const { width, height } = Dimensions.get('window')
@@ -10,23 +13,24 @@ const { width, height } = Dimensions.get('window')
 export class Shadow extends PureComponent<ShadowProps> {
   static defaultProps = {
     style: {},
+    color: '#000',
+    opacity: 0.5,
   }
 
   render() {
-    const { style } = this.props
-    // textStyles
+    const { opacity, style, color } = this.props
     return (
       <View
-        opacity={0.5}
         style={{
           position: 'absolute',
           height: height,
           width: width,
-          backgroundColor: '#000',
           zIndex: 100,
-        }}>
-        {/* {this.props.children} */}
-      </View>
+          ...style,
+          backgroundColor: color,
+          opacity: opacity,
+        }}
+      />
     )
   }
 }
