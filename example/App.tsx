@@ -9,8 +9,9 @@
  */
 
 import React, { Component } from 'react'
-import { Alert, NativeModules, SafeAreaView, StatusBar, StyleSheet, Text } from 'react-native'
+import { View, Alert, NativeModules, SafeAreaView, StatusBar, StyleSheet, Text } from 'react-native'
 import { Shadow, Button, MyLibrary } from 'react-native-library'
+import Spotlight from '../src/Spotlight'
 
 const styles = StyleSheet.create({
   h1: {
@@ -27,23 +28,25 @@ export default class App extends Component {
 
   render() {
     return (
-      <SafeAreaView
+      <View
         style={{
           flex: 1,
           alignItems: 'center',
           justifyContent: 'space-between',
-          margin: 16,
+          padding: 16,
         }}>
         <Shadow />
 
         <StatusBar barStyle="dark-content" />
         <Text style={styles.h1}>react-native-library bootstrap</Text>
-        <Button
-          text="Test JS"
-          onPress={() => {
-            MyLibrary.showMessage('This text passed from app to library')
-          }}
-        />
+        <Spotlight>
+          <Button
+            text="Test JS"
+            onPress={() => {
+              MyLibrary.showMessage('This text passed from app to library')
+            }}
+          />
+        </Spotlight>
         <Button
           text="Test Native getValue()"
           onPress={async () => {
@@ -51,7 +54,7 @@ export default class App extends Component {
             Alert.alert('Test Native getValue()', result)
           }}
         />
-      </SafeAreaView>
+      </View>
     )
   }
 }

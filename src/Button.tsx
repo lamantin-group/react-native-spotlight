@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { Text, TouchableOpacity } from 'react-native'
+import { Text, TouchableOpacity, ViewStyle } from 'react-native'
 
 export class Button extends PureComponent<{
   text: string
@@ -14,6 +14,7 @@ export class Button extends PureComponent<{
           paddingHorizontal: 16,
           paddingVertical: 8,
           borderRadius: 4,
+          ...this.props.style,
         }}>
         <Text>{this.props.text}</Text>
       </TouchableOpacity>

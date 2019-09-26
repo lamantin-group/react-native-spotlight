@@ -18,7 +18,13 @@ export class Shadow extends PureComponent<ShadowProps> {
     return (
       <View
         opacity={0.5}
-        style={{ position: 'absolute', height: height, width: width, backgroundColor: '#000' }}>
+        style={{
+          position: 'absolute',
+          height: height,
+          width: width,
+          backgroundColor: '#000',
+          zIndex: 100,
+        }}>
         {/* {this.props.children} */}
       </View>
     )
