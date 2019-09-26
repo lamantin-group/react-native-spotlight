@@ -31,7 +31,8 @@
     "ios": "cd example && npm run ios"
   },
   "peerDependencies": {
-
+    "react": "^16.8.6",
+    "react-native": "^0.60.5"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
