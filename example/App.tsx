@@ -10,7 +10,7 @@
 
 import React, { Component } from 'react'
 import { Alert, NativeModules, SafeAreaView, StatusBar, StyleSheet, Text } from 'react-native'
-import { Button, MyLibrary } from 'react-native-library'
+import { Shadow, Button, MyLibrary } from 'react-native-library'
 
 const styles = StyleSheet.create({
   h1: {
@@ -30,11 +30,12 @@ export default class App extends Component {
       <SafeAreaView
         style={{
           flex: 1,
-          backgroundColor: 'white',
           alignItems: 'center',
           justifyContent: 'space-between',
           margin: 16,
         }}>
+        <Shadow />
+
         <StatusBar barStyle="dark-content" />
         <Text style={styles.h1}>react-native-library bootstrap</Text>
         <Button
