@@ -2,13 +2,19 @@
   "name": "react-native-spotlight",
   "version": "1.0.0",
   "author": "lamantin",
-  "description": "Library bootstrap",
+  "description": "Library that helps you implement highlighting UI elements on onboarding screen",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/USERNAME/REPOSITORY.git"
+    "url": "git+https://github.com/lamantin-group/react-native-spotlight.git"
   },
   "keywords": [
+    "react-native-spotlight",
+    "react-native-spotlight-view",
+    "onboarding",
+    "focus",
+    "view",
+    "ui",
     "react-native",
     "react-native-library"
   ],
