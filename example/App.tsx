@@ -27,7 +27,14 @@ export default class App extends Component {
 
   render() {
     return (
-      <SafeAreaView style={{ flex: 1, backgroundColor: 'white', alignItems: 'center' }}>
+      <SafeAreaView
+        style={{
+          flex: 1,
+          backgroundColor: 'white',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          margin: 16,
+        }}>
         <StatusBar barStyle="dark-content" />
         <Text style={styles.h1}>react-native-library bootstrap</Text>
         <Button
