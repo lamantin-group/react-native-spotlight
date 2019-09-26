@@ -1,6 +1,6 @@
 {
   "name": "react-native-spotlight",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "lamantin",
   "description": "Library that helps you implement highlighting UI elements on onboarding screen",
   "license": "MIT",
