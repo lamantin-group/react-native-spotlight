@@ -32,7 +32,7 @@
   },
   "peerDependencies": {
     "react": "^16.8.6",
-    "react-native": "^0.60.5"
+    "react-native": "^0.62.3"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -59,7 +59,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "prettier-eslint": "^9.0.0",
     "react": "^16.8.6",
-    "react-native": "^0.60.5",
+    "react-native": "^0.62.3",
     "typescript": "^3.4.3"
   }
 }
